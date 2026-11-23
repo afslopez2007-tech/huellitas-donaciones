@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal para organizar las donaciones de Huellitas del Cauca.">
+  <title>Huellitas del Cauca | Donaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar">
+    <section class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">🐾 Huellitas del Cauca</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <section class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#necesidades">Necesidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registro">Registrar donación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#donaciones">Donaciones</a></li>
+        </ul>
+      </section>
+    </section>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <section class="container">
+        <section class="row align-items-center g-4">
+          <section class="col-lg-7">
+            <span class="eyebrow">REFUGIO COMUNITARIO</span>
+            <h1>Una ayuda pequeña<br><span>puede cambiar una vida.</span></h1>
+            <p class="hero-text">Organizamos las donaciones para que cada alimento, medicina y elemento de cuidado llegue a los animales que lo necesitan.</p>
+            <a class="btn btn-light btn-lg me-2" href="#registro">Registrar donación</a>
+            <a class="btn btn-outline-light btn-lg" href="#necesidades">Ver necesidades</a>
+          </section>
+          <section class="col-lg-5">
+            <article class="hero-card">
+              <span class="paw">🐾</span>
+              <h2>Huellitas del Cauca</h2>
+              <p>Cada aporte cuenta. Gracias por ser parte de esta causa.</p>
+            </article>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="container stats-wrap">
+      <section class="row g-3">
+        <section class="col-6 col-lg-3"><article class="stat-card"><span class="stat-icon">📦</span><strong id="totalDonaciones">0</strong><small>Donaciones registradas</small></article></section>
+        <section class="col-6 col-lg-3"><article class="stat-card"><span class="stat-icon">🍖</span><strong id="totalAlimentos">0</strong><small>Alimentos</small></article></section>
+        <section class="col-6 col-lg-3"><article class="stat-card"><span class="stat-icon">💊</span><strong id="totalMedicinas">0</strong><small>Medicinas</small></article></section>
+        <section class="col-6 col-lg-3"><article class="stat-card"><span class="stat-icon">✅</span><strong id="totalEntregadas">0</strong><small>Entregadas</small></article></section>
+      </section>
+    </section>
+
+    <section class="section-space" id="necesidades">
+      <section class="container">
+        <header class="section-heading">
+          <section><span class="eyebrow green">APOYO QUE NECESITAMOS</span><h2>Catálogo de necesidades</h2></section>
+          <p>Estas son algunas de las ayudas que requiere el refugio.</p>
+        </header>
+        <section class="row g-3" id="catalogoNecesidades"></section>
+      </section>
+    </section>
+
+    <section class="section-space form-section" id="registro">
+      <section class="container">
+        <section class="row g-4 align-items-start">
+          <section class="col-lg-4">
+            <span class="eyebrow green">FORMULARIO</span>
+            <h2>Registrar una donación</h2>
+            <p class="muted">Ingresa los datos del aporte para mantener el inventario organizado.</p>
+            <aside class="tip-box"><strong>Antes de guardar</strong><p>Revisa que los datos estén correctos. Puedes adjuntar una fotografía.</p></aside>
+          </section>
+          <section class="col-lg-8">
+            <article class="form-card">
+              <form id="formularioDonacion" novalidate>
+                <section class="row g-3">
+                  <section class="col-md-6">
+                    <label for="nombreDonante" class="form-label">Nombre del donante *</label>
+                    <input type="text" class="form-control" id="nombreDonante" required>
+                    <p class="invalid-feedback">Escribe el nombre del donante.</p>
+                  </section>
+                  <section class="col-md-6">
+                    <label for="tipoDonante" class="form-label">Tipo de donante *</label>
+                    <select class="form-select" id="tipoDonante" required>
+                      <option value="">Selecciona una opción</option><option>Persona</option><option>Empresa</option><option>Fundación</option><option>Institución</option>
+                    </select>
+                    <p class="invalid-feedback">Selecciona el tipo de donante.</p>
+                  </section>
+                  <section class="col-md-6">
+                    <label for="nombreDonacion" class="form-label">Nombre de la donación *</label>
+                    <input type="text" class="form-control" id="nombreDonacion" required>
+                    <p class="invalid-feedback">Escribe qué se está donando.</p>
+                  </section>
+                  <section class="col-md-6">
+                    <label for="tipoDonacion" class="form-label">Tipo de donación *</label>
+                    <select class="form-select" id="tipoDonacion" required>
+                      <option value="">Selecciona una categoría</option><option>Alimento</option><option>Medicina</option><option>Implementos de aseo</option><option>Muebles</option><option>Otros</option>
+                    </select>
+                    <p class="invalid-feedback">Selecciona una categoría.</p>
+                  </section>
+                  <section class="col-md-6">
+                    <label for="cantidad" class="form-label">Cantidad *</label>
+                    <input type="number" min="1" class="form-control" id="cantidad" required>
+                    <p class="invalid-feedback">Ingresa una cantidad mayor que cero.</p>
+                  </section>
+                  <section class="col-md-6">
+                    <label for="estado" class="form-label">Estado de la donación</label>
+                    <select class="form-select" id="estado"><option>Pendiente</option><option>Recibida</option><option>Entregada</option></select>
+                  </section>
+                  <section class="col-12">
+                    <label for="foto" class="form-label">Fotografía (opcional)</label>
+                    <input type="file" class="form-control" id="foto" accept="image/*">
+                    <img id="vistaPrevia" class="preview d-none" alt="Vista previa de la donación">
+                  </section>
+                  <section class="col-12 d-flex flex-wrap gap-2 pt-2">
+                    <button class="btn btn-primary-custom" type="submit" id="btnGuardar">Guardar donación</button>
+                    <button class="btn btn-outline-secondary d-none" type="button" id="btnCancelar">Cancelar edición</button>
+                    <button class="btn btn-link text-decoration-none" type="reset" id="btnLimpiar">Limpiar formulario</button>
+                  </section>
+                </section>
+              </form>
+              <p id="mensaje" class="alert mt-3 d-none" role="status"></p>
+            </article>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="section-space" id="donaciones">
+      <section class="container">
+        <header class="section-heading">
+          <section><span class="eyebrow green">REGISTROS</span><h2>Donaciones recibidas</h2></section>
+          <p>Consulta, actualiza o elimina los registros guardados.</p>
+        </header>
+        <section class="toolbar">
+          <input type="search" class="form-control" id="buscar" placeholder="Buscar por donante o donación...">
+          <select class="form-select filter-select" id="filtroTipo" aria-label="Filtrar por tipo">
+            <option value="">Todos los tipos</option><option>Alimento</option><option>Medicina</option><option>Implementos de aseo</option><option>Muebles</option><option>Otros</option>
+          </select>
+          <select class="form-select filter-select" id="filtroEstado" aria-label="Filtrar por estado">
+            <option value="">Todos los estados</option><option>Pendiente</option><option>Recibida</option><option>Entregada</option>
+          </select>
+        </section>
+        <section class="row g-3" id="listaDonaciones"></section>
+        <section id="sinResultados" class="empty-state d-none"><span>📋</span><h3>No hay donaciones para mostrar</h3><p>Registra una donación o cambia los filtros de búsqueda.</p></section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <section class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>🐾 Huellitas del Cauca</span><span>Portal de Gestión de Donaciones</span>
+    </section>
+  </footer>
+  <section class="toast-container position-fixed bottom-0 end-0 p-3">
+    <section id="toastAviso" class="toast" role="alert">
+      <section class="toast-header"><strong class="me-auto">Huellitas del Cauca</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button></section>
+      <section class="toast-body" id="toastTexto"></section>
+    </section>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
