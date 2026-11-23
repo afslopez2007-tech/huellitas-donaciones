@@ -1,0 +1,166 @@
+/* HUELLITAS DEL CAUCA - estilos organizados */
+
+/* 1. Variables y estilos generales */
+:root {
+  --verde: #176b4a;
+  --verde-oscuro: #104c37;
+  --verde-claro: #eaf4ee;
+  --texto: #1e3029;
+  --texto-suave: #6b7c74;
+  --naranja: #f0a64a;
+  --borde: #e7eee8;
+  --sombra: 0 8px 25px rgba(20, 60, 40, .07);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--texto);
+  background: #fbfcfa;
+  font-family: Arial, sans-serif;
+}
+h1, h2, h3, .navbar-brand { font-family: Arial, sans-serif; }
+
+/* 2. Navegación */
+.topbar { padding: 13px 0; background: var(--verde-oscuro); }
+.navbar-brand { font-weight: bold; letter-spacing: -.4px; }
+.nav-link { margin-left: 14px; color: rgba(255,255,255,.84) !important; }
+.nav-link:hover { color: white !important; }
+
+/* 3. Portada */
+.hero {
+  padding: 76px 0 105px;
+  color: white;
+  background: radial-gradient(circle at 85% 20%, rgba(255,255,255,.12), transparent 28%), linear-gradient(120deg,#124b37,#1b7853);
+}
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #d7eadf;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+.eyebrow.green { color: var(--verde); }
+.hero h1 { font-size: clamp(2.4rem,5vw,4.2rem); font-weight: 800; line-height: 1.12; letter-spacing: -2px; }
+.hero h1 span { color: #b9e1c9; }
+.hero-text { max-width: 590px; margin: 22px 0 28px; color: rgba(255,255,255,.84); font-size: 1.08rem; line-height: 1.75; }
+.hero .btn { padding: 12px 19px; border-radius: 9px; font-weight: 700; }
+.hero-card {
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 22px;
+  background: rgba(255,255,255,.1);
+  text-align: center;
+}
+.hero-card .paw { margin-bottom: 12px; font-size: 4rem; }
+.hero-card h2 { font-size: 1.55rem; }
+.hero-card p { color: rgba(255,255,255,.8); }
+
+/* 4. Estadísticas */
+.stats-wrap { position: relative; z-index: 2; margin-top: -45px; }
+.stat-card {
+  display: grid;
+  min-height: 126px;
+  height: 100%;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  column-gap: 10px;
+  padding: 20px;
+  border: 1px solid #edf1ed;
+  border-radius: 15px;
+  background: white;
+  box-shadow: var(--sombra);
+}
+.stat-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  grid-row: span 2;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--verde-claro);
+  font-size: 1.3rem;
+}
+.stat-card strong { font-size: 1.65rem; font-weight: 800; }
+.stat-card small { color: var(--texto-suave); }
+
+/* 5. Secciones y encabezados */
+.section-space { padding: 76px 0; }
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.section-heading h2, .form-section h2 { font-size: clamp(1.8rem,3vw,2.4rem); font-weight: 800; letter-spacing: -.8px; }
+.section-heading p { max-width: 340px; margin-bottom: 5px; color: var(--texto-suave); }
+.muted { color: var(--texto-suave); line-height: 1.75; }
+
+/* 6. Catálogo de necesidades */
+.need-card {
+  height: 100%;
+  padding: 24px;
+  border: 1px solid #e9efea;
+  border-radius: 15px;
+  background: white;
+  transition: .2s;
+}
+.need-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(25,70,45,.08); }
+.need-card span { font-size: 2rem; }
+.need-card h3 { margin: 14px 0 7px; font-size: 1.08rem; font-weight: 800; }
+.need-card p { margin: 0; color: var(--texto-suave); font-size: .93rem; line-height: 1.6; }
+
+/* 7. Formulario */
+.form-section { background: #f1f6f2; }
+.tip-box { margin-top: 25px; padding: 20px; border-left: 4px solid var(--naranja); border-radius: 9px; background: white; color: var(--texto-suave); line-height: 1.6; }
+.tip-box strong { display: block; margin-bottom: 5px; color: var(--texto); }
+.tip-box p { margin: 0; }
+.form-card { padding: clamp(20px,4vw,34px); border: 1px solid #e6eee8; border-radius: 18px; background: white; box-shadow: 0 12px 35px rgba(25,70,45,.05); }
+.form-label { font-size: .9rem; font-weight: 700; }
+.form-control, .form-select { min-height: 46px; border-color: #dce6df; border-radius: 8px; }
+.form-control:focus, .form-select:focus { border-color: #62a783; box-shadow: 0 0 0 .2rem rgba(23,107,74,.12); }
+.btn-primary-custom { padding: 11px 19px; border: 1px solid var(--verde); border-radius: 8px; background: var(--verde); color: white; font-weight: 700; }
+.btn-primary-custom:hover { background: var(--verde-oscuro); color: white; }
+.preview { display: block; width: 150px; height: 115px; margin-top: 12px; border: 1px solid #e2e8e3; border-radius: 9px; object-fit: cover; }
+
+/* 8. Búsqueda y filtros */
+.toolbar { display: flex; gap: 12px; margin-bottom: 22px; }
+.toolbar input { flex: 1; }
+.filter-select { max-width: 190px; }
+
+/* 9. Tarjetas de donaciones */
+.donation-card { height: 100%; overflow: hidden; border: 1px solid var(--borde); border-radius: 14px; background: white; box-shadow: 0 6px 20px rgba(25,70,45,.045); }
+.donation-photo, .donation-placeholder { width: 100%; height: 180px; }
+.donation-photo { object-fit: cover; }
+.donation-placeholder { display: grid; place-items: center; background: linear-gradient(135deg,#e7f3eb,#f7eee0); font-size: 3rem; }
+.donation-body { padding: 19px; }
+.donation-body h3 { margin: 10px 0 6px; font-size: 1.08rem; font-weight: 800; }
+.donation-meta { color: var(--texto-suave); font-size: .88rem; line-height: 1.8; overflow-wrap: anywhere; }
+.status { display: inline-block; padding: 5px 10px; border-radius: 30px; background: #fff3dc; color: #956016; font-size: .75rem; font-weight: 700; }
+.status.recibida { background: #e5f0ff; color: #285c9b; }
+.status.entregada { background: #e3f5e9; color: #216b42; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.card-actions button { flex: 1; }
+
+/* 10. Mensajes y pie de página */
+.empty-state { padding: 55px 20px; border: 1px dashed #cad9ce; border-radius: 14px; background: white; color: var(--texto-suave); text-align: center; }
+.empty-state span { font-size: 2.5rem; }
+.empty-state h3 { margin: 12px 0 6px; color: var(--texto); font-size: 1.2rem; }
+.footer { padding: 25px 0; background: var(--verde-oscuro); color: rgba(255,255,255,.8); font-size: .9rem; }
+
+/* 11. Adaptación a celulares y tabletas */
+@media (max-width: 767px) {
+  .hero { padding: 55px 0 85px; }
+  .hero-card { min-height: 200px; }
+  .section-space { padding: 55px 0; }
+  .section-heading { display: block; }
+  .toolbar { flex-direction: column; }
+  .filter-select { max-width: none; }
+  .nav-link { margin-left: 0; }
+}
